@@ -4,7 +4,7 @@
 
 Research prototype of **Incremental Keyword PIR (IKPIR)**: a single-server keyword-PIR scheme that supports efficient `insert`, `update`, and `delete` on the server database while preserving the one-round, single-Index-PIR-query profile of ChalametPIR-style constructions.
 
-This is the implementation behind the CANS 2026 paper *"Incremental Keyword Private Information Retrieval from d-ary Segmented Cuckoo Filters"*: the paper constructs IKPIR generically from any **updatable index PIR (UIPIR** — the `IndexPirBackend` + `IncrementalPirBackend` trait family**)** and names the LWE instantiation **RisePIR** — **RisePIR-F** with the FrodoPIR backend, **RisePIR-S** with the SimplePIR backend. The root `README.md` carries the full paper ↔ code notation table.
+This is the implementation behind the CANS 2026 paper *"Incremental Keyword Private Information Retrieval from d-ary Segmented Cuckoo Filters"*: the paper constructs IKPIR generically from any **updatable index PIR (UIPIR)** — the `IndexPirBackend` + `IncrementalPirBackend` trait family** and names the LWE instantiation **RisePIR** — **RisePIR-F** with the FrodoPIR backend, **RisePIR-S** with the SimplePIR backend. The root `README.md` carries the full paper ↔ code notation table.
 
 The key novelty is the **Segmented Cuckoo Filter (SCF)**: a dynamic fingerprint-based filter that (a) supports incremental updates like a standard Cuckoo Filter, and (b) makes key lookups read a *deterministic, fixed* set of slots, so the client always needs exactly one Index-PIR query per segment.
 
